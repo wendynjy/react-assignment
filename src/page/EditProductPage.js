@@ -11,7 +11,7 @@ export default function EditProductPage() {
 
     const context = useContext(ProductContext);
     const productToEdit = context.getProductById(productId);
-
+console.log(typeof(productId));
     return <>
         <h1>Editing Product: {productToEdit.name}</h1>
         <ProductForm initialValue={productToEdit}

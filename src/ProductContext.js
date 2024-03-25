@@ -26,22 +26,22 @@ export default function ProductContextData(props) {
                 cost: parseInt(newProduct.cost)
             });
 
-            newProduct._id = response.data.insertedId;
+            newProduct.id = response.data.insertedId;
             setProducts([...products, newProduct]);
         },
         getProductById(productId) {
-            return products.find(r => r._id === productId);
+            return products.find(r => r.id === parseInt(productId));
         },
         async updateProductById(productId, newProduct) {
-
+            
             // const response = await axios.put(BASE_API_URL + "/products/" + productId,{
             //     ...newProduct,
             //     qty: parseInt(newProduct.qty)
             // });
 
-            newProduct._id = productId
+            newProduct.id = parseInt(productId)
     
-            const index = products.findIndex( r => r._id === productId);
+            const index = products.findIndex( r => r.id === parseInt(productId));
             const left = [...products.slice(0, index)];
             const right = [...products.slice(index+1)];
             const modified  =[ ...left, newProduct, ...right];
