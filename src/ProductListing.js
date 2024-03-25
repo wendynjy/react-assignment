@@ -10,10 +10,10 @@ export default function ProductListing() {
             context.getProducts().map( r=> <li key={r.id} className="list-group-item">
                 <h2>{r.name}</h2>
                 <div>
-                    {r.description}
+                    Description: {r.description}
                 </div>
                 <div>
-                    {r.cost}
+                    Cost: ${r.cost}
                 </div>
 
                 <button className="btn btn-primary mt-3"
