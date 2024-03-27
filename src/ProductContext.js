@@ -47,6 +47,10 @@ export default function ProductContextData(props) {
             const modified  =[ ...left, newProduct, ...right];
    
             setProducts(modified);
+        },
+        async deleteProductById(productId) {
+            await axios.delete(BASE_API_URL + "/products/" + productId);
+            setProducts(products.filter(product => product.id !== parseInt(productId)));
         }
     }
 

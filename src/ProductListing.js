@@ -16,12 +16,18 @@ export default function ProductListing() {
                     Cost: ${r.cost}
                 </div>
 
-                <button className="btn btn-primary mt-3"
+                <button className="btn btn-primary mt-3 button-edit"
                     onClick={()=>{
                         navigate("/edit/" + r.id);
                     }}
                 
                 >Edit</button>
+                <button className="btn btn-danger mt-3 button-delete"
+                    onClick={()=>{
+                        navigate("/delete/" + r.id);
+                    }}
+                
+                >Delete</button>
             </li>)
         }
 

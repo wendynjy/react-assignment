@@ -7,6 +7,7 @@ import {
 import ProductListingPage from "./page/ProductListingPage"
 import AddProductPage from "./page/AddProductPage"
 import EditProductPage from "./page/EditProductPage"
+import DeleteProductPage from "./page/DeleteProductPage"
 
 export default function App() {
   return <div className="container">
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/" element={<ProductListingPage />} />
           <Route path="/add" element={<AddProductPage />} />
           <Route path="/edit/:productId" element={<EditProductPage/>} />
+          <Route path="/delete/:productId" element={<DeleteProductPage/>} />
         </Routes>
       </Router>
     </ProductContextData>
