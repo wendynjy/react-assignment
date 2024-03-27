@@ -15,11 +15,16 @@ export default function DeleteProductPage() {
         navigate('/');
     };
 
+    const handleCancel = () => {
+        navigate('/');
+    };
+
     return (
         <>
             <h1>Delete Product: {productToDelete.name}</h1>
             <p>Are you sure you want to delete this product?</p>
-            <button className="btn btn-danger" onClick={handleDelete}>Delete</button>
+            <button className="btn btn-danger button-delete" onClick={handleDelete}>Delete</button>
+            <button className="btn btn-success" onClick={handleCancel}>Cancel</button>
         </>
     );
 }
